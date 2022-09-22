@@ -1,8 +1,10 @@
 package com.infozup.cadastrocliente.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -10,7 +12,9 @@ import javax.persistence.*;
 @Setter
 @ToString
 @Entity
-public class Address {
+public class Address implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,6 +26,7 @@ public class Address {
     private String state;
     private String postalCode;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "address")
     private Person person;
 

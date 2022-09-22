@@ -38,12 +38,14 @@ public class PocCadastroClienteApplication implements CommandLineRunner {
 		Address a = new Address(null,"Rua Otacilio Pedro Vasco","110","próximo posto de saúde","Rio de Janeiro","RJ","21635440");
 		Address a1 = new Address(null,"Rua Otacilio Pedro Vasco","111","próximo posto de saúde","Nova iguaçu","RJ","21635441");
 		Address a2 = new Address(null,"Rua Otacilio Pedro Vasco","112","próximo posto de saúde","Niterói","RJ","21635442");
+		Address a3 = new Address(null,"Rua Otacilio Pedro Vasco","112","próximo posto de saúde","Niterói","RJ","21635442");
 
 		addressRepository.saveAll(Arrays.asList(a,a1,a2));
 
 		Contact c1 = new Contact(null,"982380946",null,"caka19@hotmail.com");
 		Contact c2 = new Contact(null,"982380947",null,"caka19@hotmail.com");
 		Contact c3 = new Contact(null,"982380948",null,"caka19@hotmail.com");
+		Contact c4 = new Contact(null,"982380948",null,"caka19@hotmail.com");
 
 		contactRepository.saveAll(Arrays.asList(c1,c2,c3));
 
@@ -55,12 +57,12 @@ public class PocCadastroClienteApplication implements CommandLineRunner {
 		p.setAddress(a);
 		p1.setAddress(a1);
 		p2.setAddress(a2);
-		p3.setAddress(a);
+		p3.setAddress(a3);
 
 		p.setContact(c1);
 		p1.setContact(c2);
 		p2.setContact(c3);
-		p3.setContact(c1);
+		p3.setContact(c4);
 
 		personRepository.saveAll(Arrays.asList(p,p1,p2,p3));
 

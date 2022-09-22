@@ -51,10 +51,10 @@ public class PersonController {
 
         log.info("Inserindo pessoas:", obj.getId());
 
-        Person person = personService.savePerson(obj);
+        var person = personService.savePerson(obj);
 
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}").buildAndExpand(obj.getId()).toUri();
+                .path("/{id}").buildAndExpand(person.getId()).toUri();
 
         return ResponseEntity.created(uri).build();
     }
